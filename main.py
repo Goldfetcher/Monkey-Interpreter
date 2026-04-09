@@ -16,3 +16,17 @@ while True:
     print(tok)
     if tok.type == EOF:
         break
+
+
+from lexer import Lexer
+from parser import Parser
+
+input_code = "5"
+
+lexer = Lexer(input_code)
+parser = Parser(lexer)
+
+program = parser.parse_program()
+
+for node in program:
+    print(node)
