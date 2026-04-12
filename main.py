@@ -26,7 +26,21 @@ input_code = "5"
 lexer = Lexer(input_code)
 parser = Parser(lexer)
 
+program = parser.parse_program() 
+
+#precedence main
+from lexer import Lexer
+from parser import Parser
+
+input_code = "5 + 10 * 2"
+
+lexer = Lexer(input_code)
+parser = Parser(lexer)
+
 program = parser.parse_program()
+
+for node in program:
+    print(node)
 
 for node in program:
     print(node)
