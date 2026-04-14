@@ -16,3 +16,18 @@ while True:
     print(tok)
     if tok.type == EOF:
         break
+
+
+# let feature
+from lexer import Lexer
+from parser import Parser
+
+input_code = "let x = 5 + 10 * 2;"
+
+lexer = Lexer(input_code)
+parser = Parser(lexer)
+
+program = parser.parse_program()
+
+for node in program:
+    print(node)
